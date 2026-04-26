@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lixo no Lugar Certo – Conscientização sobre Descarte Irregular</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(160deg, #f2f6e8 0%, #e6ecd5 25%, #f8f5ea 50%, #eaf0db 75%, #f3f6e9 100%);
+            background-attachment: fixed;
+            color: #1e2f1e;
+            scroll-behavior: smooth;
+        }
+
+        /* Cabeçalho impactante */
+        header {
+            background: linear-gradient(135deg, #0a1f10 0%, #142e18 30%, #1d4022 60%, #17351c 100%);
+            color: white;
+            text-align: center;
+            padding: 4.5rem 1.5rem 4rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+            border-bottom: 6px solid #b5d48a;
+        }
+
+        .onda {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f2f6e8' fill-opacity='1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,181.3C960,203,1056,213,1152,202.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: pulsar 8s infinite ease-in-out;
+        }
+
+        @keyframes pulsar {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.3); opacity: 0.8; }
+        }
+
+        header h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.6);
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0.8rem;
+            background: linear-gradient(to right, #ffffff, #d4f0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            color: #d8eeb8;
+        }
+
+        .header-icon {
+            font-size: 4.5rem;
+            margin-bottom: 0.8rem;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.6));
+        }
+
+        /* Navegação premium */
+        nav {
+            background: rgba(8, 18, 10, 0.94);
+            backdrop-filter: blur(25px);
+            padding: 1rem 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #a8cc80;
+        }
+
+        nav a {
+            color: #e6f5c0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 700;
+            font-size: 1.15rem;
+            transition: all 0.35s ease;
+            padding: 0.6rem 1.4rem;
+            border-radius: 35px;
+            letter-spacing: 0.5px;
+            background: transparent;
+        }
+
+        nav a:hover {
+            background: #f9f5d0;
+            color: #0f1f0f;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(180, 210, 90, 0.5);
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Seções elegantes */
+        .secao {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 38px;
+            padding: 3.2rem 3rem;
+            margin: 3.5rem 0;
+            box-shadow: 0 30px 55px rgba(0, 0, 0, 0.1), 0 0 0 1.5px rgba(140, 170, 90, 0.35);
+            border-left: 14px solid;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .secao:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 40px 65px rgba(0, 0, 0, 0.16);
+        }
+
+        .secao h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            color: #16331e;
+        }
+
+        .secao p {
+            font-size: 1.25rem;
+            margin-bottom: 1.3rem;
+            color: #2a402a;
+        }
+
+        /* Galeria de fotos */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.4rem;
+            margin: 3rem 0;
+        }
+
+        .card-foto {
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 22px 38px rgba(0, 0, 0, 0.13);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid #e8e0c8;
+        }
+
+        .card-foto:hover {
+            transform: translateY(-16px) scale(1.03);
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.22);
+            border-color: #a3c280;
+        }
+
+        .card-foto img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 8px solid #7a9c58;
+            background-color: #d4c8a8;
+        }
+
+        .card-foto .legenda {
+            padding: 1.4rem 1.2rem;
+            font-weight: 700;
+            text-align: center;
+            background: #fefdf7;
+            font-size: 1.1rem;
+            color: #3e4f2e;
+        }
+
+        /* NOVO FORMATO DE GRÁFICOS: CARDS DE IMPACTO VISUAL */
+        .impacto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.2rem;
+            margin: 2.8rem 0;
+        }
+
+        .impacto-card {
+            background: white;
+            border-radius: 30px;
+            padding: 2.2rem 1.8rem;
+            text-align: center;
+            box-shadow: 0 18px 30px rgba(0,0,0,0.08);
+            border: 2px solid #e2ddc8;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impacto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 42px rgba(0,0,0,0.15);
+            border-color: #b0c680;
+        }
+
+        .impacto-icone {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: balancar 2s infinite ease-in-out;
+        }
+
+        @keyframes balancar {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+
+        .impacto-numero {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #2a5a2a;
+            line-height: 1.2;
+        }
+
+        .impacto-descricao {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #3a4f2a;
+            margin-top: 0.5rem;
+        }
+
+        .impacto-fonte {
+            font-size: 0.85rem;
+            color: #6b7a5a;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        /* Conteúdo extra adicionado */
+        .conteudo-extra {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .artigo-card {
+            background: #fbfef5;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+            border: 2px solid #dce5c0;
+            transition: 0.3s;
+        }
+
+        .artigo-card:hover {
+            background: #f3fae4;
+            border-color: #aac870;
+        }
+
+        .artigo-card h3 {
+            font-size: 1.7rem;
+            color: #1e4020;
+            margin-bottom: 1rem;
+        }
+
+        .artigo-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .artigo-card ul li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #dce5c0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .artigo-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Dicas cards clicáveis inteiros */
+        .dicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .dica-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            background: #f5faee;
+            padding: 2.4rem 1.8rem;
+            border-radius: 30px;
+            text-align: center;
+            transition: all 0.35s ease;
+            border: 2px solid #d4e4bc;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.06);
+            cursor: pointer;
+        }
+
+        .dica-card-link:hover {
+            background: #e7f6d0;
+            border-color: #86a85a;
+            transform: translateY(-10px);
+            box-shadow: 0 28px 38px rgba(0,0,0,0.16);
+        }
+
+        .dica-card-link span {
+            font-size: 3.6rem;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .dica-card-link strong {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1d381d;
+        }
+
+        .dica-card-link p {
+            font-size: 1.05rem;
+            color: #3b4f2d;
+        }
+
+        footer {
+            background: #0d1c10;
+            color: #e6dcb8;
+            text-align: center;
+            padding: 2.8rem 1.5rem;
+            margin-top: 5rem;
+            border-top: 7px solid #8eb860;
+            font-size: 1.05rem;
+        }
+
+        footer a {
+            color: #f7e9a0;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            header h1 { font-size: 2.5rem; }
+            .secao { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-icon">🌍🗑️♻️</div>
+        <h1>Lixo no Lugar Certo</h1>
+        <p>Conscientização sobre descarte irregular · Informação que transforma realidades</p>
+        <div class="onda"></div>
+    </header>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#fotos">Fotos Reais</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#conteudo">Informações</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#sobre">Participe</a>
+    </nav>
+
+    <div class="container">
+        <!-- FOTOS -->
+        <section id="fotos">
+            <div class="secao" style="border-left-color: #c49a2c;">
+                <h2>📸 Imagens que Denunciam</h2>
+                <p>Registros reais do descarte irregular e seus efeitos nas cidades. Substitua pelas suas fotos.</p>
+            </div>
+            <div class="galeria">
+                <div class="card-foto"><img src="https://placehold.co/600x400/8B9A6E/white?text=Sua+Foto+1" alt="Lixo em terreno"><div class="legenda">Terreno baldio com resíduos</div></div>
+                <div class="card-foto"><img src="https://placehold.co/600x400/7A8B5E/white?text=Sua+Foto+2" alt="Lixo em rio"><div class="legenda">Córrego poluído por lixo</div></div>
+                <div class="card-foto"><img src="https://placehold.co/600x400/6B7B4E/white?text=Sua+Foto+3" alt="Entulho"><div class="legenda">Entulho obstruindo calçada</div></div>
+                <div class="card-foto"><img src="https://placehold.co/600x400/5C6B3E/white?text=Sua+Foto+4" alt="Praça suja"><div class="legenda">Praça pública abandonada</div></div>
+            </div>
+        </section>
+
+        <!-- IMPACTO COM NOVOS GRÁFICOS VISUAIS -->
+        <section id="impacto" class="secao" style="border-left-color: #3a7ca5;">
+            <h2>📊 Impacto do Descarte Irregular</h2>
+            <p>Dados que mostram a gravidade do problema no Brasil e no mundo.</p>
+            <div class="impacto-grid">
+                <div class="impacto-card">
+                    <span class="impacto-icone">🗑️</span>
+                    <div class="impacto-numero">30%</div>
+                    <div class="impacto-descricao">do lixo urbano é descartado de forma irregular</div>
+                    <div class="impacto-fonte">Fonte: ABRELPE 2024</div>
+                </div>
+                <div class="impacto-card">
+                    <span class="impacto-icone">🌊</span>
+                    <div class="impacto-numero">8 mi</div>
+                    <div class="impacto-descricao">toneladas de plástico vão para oceanos por ano</div>
+                    <div class="impacto-fonte">Fonte: ONU Meio Ambiente</div>
+                </div>
+                <div class="impacto-card">
+                    <span class="impacto-icone">⏳</span>
+                    <div class="impacto-numero">400+</div>
+                    <div class="impacto-descricao">anos para o plástico se decompor na natureza</div>
+                    <div class="impacto-fonte">Fonte: MMA Brasil</div>
+                </div>
+                <div class="impacto-card">
+                    <span class="impacto-icone">💰</span>
+                    <div class="impacto-numero">R$ 3 bi</div>
+                    <div class="impacto-descricao">gastos anuais com limpeza de descarte irregular</div>
+                    <div class="impacto-fonte">Fonte: CNM 2024</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEÚDO EXTRA ADICIONADO -->
+        <section id="conteudo" class="secao" style="border-left-color: #b59a3a;">
+            <h2>📚 Entenda o Problema</h2>
+            <div class="conteudo-extra">
+                <div class="artigo-card">
+                    <h3>🌱 Consequências Ambientais</h3>
+                    <ul>
+                        <li>🐟 Contaminação de rios e morte de animais aquáticos</li>
+                        <li>🦟 Proliferação de mosquitos transmissores de doenças</li>
+                        <li>🌍 Emissão de gases do efeito estufa em lixões</li>
+                        <li>🏞️ Degradação do solo e lençóis freáticos</li>
+                        <li>🌧️ Entupimento de bueiros causando enchentes</li>
+                    </ul>
+                </div>
+                <div class="artigo-card">
+                    <h3>🏙️ Impactos nas Cidades</h3>
+                    <ul>
+                        <li>🚧 Obstrução de vias públicas e calçadas</li>
+                        <li>📉 Desvalorização de imóveis nas áreas afetadas</li>
+                        <li>🏥 Aumento de casos de leptospirose e dengue</li>
+                        <li>💸 Custos elevados para os cofres públicos</li>
+                        <li>🎨 Degradação visual e turística dos bairros</li>
+                    </ul>
+                </div>
+                <div class="artigo-card">
+                    <h3>♻️ Reciclagem em Números</h3>
+                    <ul>
+                        <li>📦 Apenas 4% do lixo é reciclado no Brasil</li>
+                        <li>🏭 1 ton de papel reciclado salva 22 árvores</li>
+                        <li>🥫 Latinha de alumínio: 60 dias para voltar à prateleira</li>
+                        <li>🔋 Pilhas descartadas incorretamente contaminam o solo</li>
+                        <li>🧴 Plástico reciclado economiza 70% de energia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- DICAS COM CARDS INTEIROS CLICÁVEIS -->
+        <section id="dicas" class="secao" style="border-left-color: #4f7a3a;">
+            <h2>💡 Como Fazer a Diferença (clique nos cards)</h2>
+            <div class="dicas-grid">
+                <a href="https://www.gov.br/reciclagem" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>🗑️</span><strong>Descarte Correto</strong><p>Saiba como descartar resíduos domésticos.</p>
+                </a>
+                <a href="https://www.gov.br/coletaseletiva" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>♻️</span><strong>Coleta Seletiva</strong><p>Dias e horários no seu município.</p>
+                </a>
+                <a href="https://www.gov.br/denunciaambiental" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>📱</span><strong>Denuncie</strong><p>Canal oficial para descarte ilegal.</p>
+                </a>
+                <a href="https://www.gov.br/oleodecozinha" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>🛢️</span><strong>Óleo de Cozinha</strong><p>Pontos de coleta e reciclagem.</p>
+                </a>
+                <a href="https://www.gov.br/logisticareversa" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>🔋</span><strong>Eletrônicos</strong><p>Logística reversa de eletroeletrônicos.</p>
+                </a>
+                <a href="https://www.gov.br/participacaosocial" target="_blank" rel="noopener" class="dica-card-link">
+                    <span>🫱🏽‍🫲🏾</span><strong>Mobilize-se</strong><p>Mutirões e ações comunitárias.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- SOBRE / CHAMADA -->
+        <section id="sobre" class="secao" style="border-left-color: #b55a3a;">
+            <h2>🤝 Junte-se a Nós</h2>
+            <p>Este site foi criado para usar fotos reais e informação de qualidade para engajar jovens e adultos. Compartilhe suas imagens, denuncie focos de lixo e ajude a construir cidades mais limpas.</p>
+            <p style="font-weight: bold; font-size: 1.4rem;">🌱 Lugar de lixo é no lixo. Atitude consciente muda o mundo.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Lixo no Lugar Certo – Iniciativa de conscientização ambiental</p>
+        <p>Links para sites governamentais oficiais · <a href="#">Voltar ao topo</a></p>
+        <p style="margin-top: 0.8rem;">Substitua as imagens pelas suas fotos para personalizar a mensagem.</p>
+    </footer>
+</body>
+</html>
